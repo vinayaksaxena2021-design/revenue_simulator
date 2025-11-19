@@ -303,7 +303,7 @@ col4.metric("Best / Worst run", f"${best:,.0f}", f"min ${worst:,.0f}")
 st.markdown("#### Revenue distribution across runs")
 
 fig, ax = plt.subplots()
-ax.hist(revenue_runs, bins=30)
+ax.hist(revenue_runs, bins='auto')
 ax.set_xlabel("Total revenue over horizon")
 ax.set_ylabel("Frequency")
 st.pyplot(fig)
@@ -339,4 +339,5 @@ st.dataframe(grouped_df, use_container_width=True)
 st.caption(
     "This table is a deterministic view using the mean demand each month. "
     "The Monte Carlo above shows how randomness can push you above or below these values."
+
 )
